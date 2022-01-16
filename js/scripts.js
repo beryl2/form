@@ -1,7 +1,18 @@
 $(document).ready(function() {
     $("#blanks form").submit(function(event) {
         var blanks = ["person1", "person2", "animal","exclamation","verb","noun"]
-        blanks.foeEach(function(blank){
+        blanks.forEach(function(blank){
+            var userInput = $("input#" + blank).val();
+            $("." + blank).text(userInput);
+        });
+        $("#story").show();
+
+        event.preventDefault();
+    });
+
+    $("#blanks form").submit(function(event) {
+        var blanks = ["name", "address",]
+        blanks.forEach(function(blank){
             var userInput = $("input#" + blank).val();
             $("." + blank).text(userInput);
         });
